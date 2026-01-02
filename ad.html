@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watching Ad…</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial, sans-serif;
+  color:#fff;
+
+  /* 🌈 PREMIUM BACKGROUND */
+  background:
+    radial-gradient(circle at top, #1b2b4a, transparent 60%),
+    linear-gradient(135deg, #05030a, #12061b, #05030a);
+}
+
+/* page wrapper */
+.wrapper{
+  max-width:420px;
+  margin:0 auto;
+  padding:14px;
+  text-align:center;
+}
+
+/* glass card */
+.box{
+  background:rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius:16px;
+  padding:18px;
+  margin:14px 0;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+
+h3{
+  margin:6px 0 10px;
+  font-size:18px;
+  color:#e0e7ff;
+}
+
+/* ⏳ TIMER */
+.timer{
+  font-size:30px;
+  font-weight:bold;
+  margin:10px 0;
+  color:#00ffcc;
+  text-shadow:
+    0 0 10px rgba(0,255,204,.6),
+    0 0 25px rgba(0,255,204,.4);
+}
+
+/* CONTINUE BUTTON */
+.btn{
+  display:none;
+  margin-top:14px;
+  padding:14px;
+  width:100%;
+  background:linear-gradient(90deg,#00ffcc,#00aaff);
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:bold;
+  color:#000;
+  cursor:pointer;
+  box-shadow:
+    0 0 12px rgba(0,255,204,.5),
+    0 0 25px rgba(0,170,255,.4);
+}
+
+.note{
+  font-size:13px;
+  color:#c7d2fe;
+  margin-top:6px;
+}
+
+/* small screen safety */
+@media(max-width:360px){
+  .hide-xs{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔴 POP ADS -->
+<script src="https://pl28057138.effectivegatecpm.com/38/cb/92/38cb9291cf4e22262c4fe597c31ab33b.js"></script>
+<script src="https://pl28058765.effectivegatecpm.com/04/a0/dd/04a0dd9a2eb7ea4e09120df34587f69c.js"></script>
+
+<div class="wrapper">
+
+  <!-- 🔝 TOP BANNER (ad5) -->
+  <div class="box">
+    <script>
+      atOptions = {
+        'key' : '71731f5aa1a266867d7af3cf65e8752f',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/71731f5aa1a266867d7af3cf65e8752f/invoke.js"></script>
+  </div>
+
+  <!-- ⏳ TIMER -->
+  <div class="box">
+    <h3>Please stay on this page</h3>
+    <div class="timer" id="timer">30</div>
+    <div class="note">Do not close this page</div>
+    <button class="btn" id="continueBtn">Continue</button>
+  </div>
+
+  <!-- 📌 MID AD (ad3) -->
+  <div class="box hide-xs">
+    <script>
+      atOptions = {
+        'key' : '1179d78c454bd6eb8d2e10e95ba49188',
+        'format' : 'iframe',
+        'height' : 300,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/1179d78c454bd6eb8d2e10e95ba49188/invoke.js"></script>
+  </div>
+
+  <!-- 🔻 BOTTOM AD (ad4) -->
+  <div class="box">
+    <script>
+      atOptions = {
+        'key' : '993366890e9805d6ddf022b534913624',
+        'format' : 'iframe',
+        'height' : 600,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script src="https://www.highperformanceformat.com/993366890e9805d6ddf022b534913624/invoke.js"></script>
+  </div>
+
+</div>
+
+<script>
+let time = 30;
+const t = document.getElementById("timer");
+const btn = document.getElementById("continueBtn");
+const backId = new URLSearchParams(window.location.search).get("back");
+
+const interval = setInterval(()=>{
+  time--;
+  t.innerText = time;
+  if(time <= 0){
+    clearInterval(interval);
+    btn.style.display = "block";
+  }
+},1000);
+
+btn.onclick = ()=>{
+  location.href = "index.html?unlock=" + backId;
+};
+</script>
+
+</body>
+</html>
