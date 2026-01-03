@@ -10,53 +10,32 @@
 body{
   margin:0;
   min-height:100vh;
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   color:#fff;
-
-  /* 🌈 PREMIUM BACKGROUND */
   background:
-    radial-gradient(circle at top, #1b2b4a, transparent 60%),
-    linear-gradient(135deg, #05030a, #12061b, #05030a);
+    radial-gradient(circle at top,#1b2b4a,transparent 60%),
+    linear-gradient(135deg,#05030a,#12061b,#05030a);
 }
-
-/* page wrapper */
 .wrapper{
   max-width:420px;
-  margin:0 auto;
+  margin:auto;
   padding:14px;
   text-align:center;
 }
-
-/* glass card */
 .box{
   background:rgba(255,255,255,0.06);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter:blur(10px);
   border-radius:16px;
   padding:18px;
-  margin:14px 0;
+  margin:18px 0;
   border:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 20px 40px rgba(0,0,0,.6);
 }
-
-h3{
-  margin:6px 0 10px;
-  font-size:18px;
-  color:#e0e7ff;
-}
-
-/* ⏳ TIMER */
 .timer{
-  font-size:30px;
+  font-size:32px;
   font-weight:bold;
-  margin:10px 0;
   color:#00ffcc;
-  text-shadow:
-    0 0 10px rgba(0,255,204,.6),
-    0 0 25px rgba(0,255,204,.4);
+  text-shadow:0 0 12px rgba(0,255,204,.6);
 }
-
-/* CONTINUE BUTTON */
 .btn{
   display:none;
   margin-top:14px;
@@ -69,47 +48,41 @@ h3{
   font-weight:bold;
   color:#000;
   cursor:pointer;
-  box-shadow:
-    0 0 12px rgba(0,255,204,.5),
-    0 0 25px rgba(0,170,255,.4);
 }
+.note{font-size:13px;color:#c7d2fe}
+.ad-slot{margin:22px 0}
 
-.note{
-  font-size:13px;
-  color:#c7d2fe;
-  margin-top:6px;
+/* Free Fire buttons */
+.ff-btn{
+  display:block;
+  margin:12px 0;
+  padding:14px;
+  border-radius:12px;
+  background:linear-gradient(90deg,#ff9f00,#ff005d);
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 0 12px rgba(255,80,0,.4);
 }
-
-/* small screen safety */
-@media(max-width:360px){
-  .hide-xs{display:none}
+.ff-btn.secondary{
+  background:linear-gradient(90deg,#7c3aed,#00aaff);
 }
 </style>
 </head>
 
-<body>
-
-<!-- 🔴 POP ADS -->
-<script src="https://pl28057138.effectivegatecpm.com/38/cb/92/38cb9291cf4e22262c4fe597c31ab33b.js"></script>
-<script src="https://pl28058765.effectivegatecpm.com/04/a0/dd/04a0dd9a2eb7ea4e09120df34587f69c.js"></script>
+<body onclick="firePopAds()" ontouchstart="firePopAds()">
 
 <div class="wrapper">
 
-  <!-- 🔝 TOP BANNER (ad5) -->
-  <div class="box">
+  <!-- 1️⃣ TOP 728×90 -->
+  <div class="ad-slot">
     <script>
-      atOptions = {
-        'key' : '71731f5aa1a266867d7af3cf65e8752f',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
+      atOptions={'key':'71731f5aa1a266867d7af3cf65e8752f','format':'iframe','height':90,'width':728,'params':{}};
     </script>
     <script src="https://www.highperformanceformat.com/71731f5aa1a266867d7af3cf65e8752f/invoke.js"></script>
   </div>
 
-  <!-- ⏳ TIMER -->
+  <!-- 2️⃣ COUNTDOWN -->
   <div class="box">
     <h3>Please stay on this page</h3>
     <div class="timer" id="timer">30</div>
@@ -117,54 +90,85 @@ h3{
     <button class="btn" id="continueBtn">Continue</button>
   </div>
 
-  <!-- 📌 MID AD (ad3) -->
-  <div class="box hide-xs">
+  <!-- 3️⃣ 728×90 -->
+  <div class="ad-slot">
     <script>
-      atOptions = {
-        'key' : '1179d78c454bd6eb8d2e10e95ba49188',
-        'format' : 'iframe',
-        'height' : 300,
-        'width' : 160,
-        'params' : {}
-      };
+      atOptions={'key':'71731f5aa1a266867d7af3cf65e8752f','format':'iframe','height':90,'width':728,'params':{}};
+    </script>
+    <script src="https://www.highperformanceformat.com/71731f5aa1a266867d7af3cf65e8752f/invoke.js"></script>
+  </div>
+
+  <!-- 4️⃣ FREE FIRE BUTTONS -->
+  <div class="box">
+    <a target="_blank"
+       href="https://www.effectivegatecpm.com/j2au39gqi?key=0a1f3fbcb1e5ff5df2fd7714f649f422"
+       class="ff-btn">💎 Free Diamond</a>
+
+    <a target="_blank"
+       href="https://www.effectivegatecpm.com/j2au39gqi?key=0a1f3fbcb1e5ff5df2fd7714f649f422"
+       class="ff-btn secondary">🔥 Free Booyah Pass</a>
+  </div>
+
+  <!-- 5️⃣ 728×90 -->
+  <div class="ad-slot">
+    <script>
+      atOptions={'key':'71731f5aa1a266867d7af3cf65e8752f','format':'iframe','height':90,'width':728,'params':{}};
+    </script>
+    <script src="https://www.highperformanceformat.com/71731f5aa1a266867d7af3cf65e8752f/invoke.js"></script>
+  </div>
+
+  <!-- 6️⃣ 300×160 -->
+  <div class="ad-slot">
+    <script>
+      atOptions={'key':'1179d78c454bd6eb8d2e10e95ba49188','format':'iframe','height':300,'width':160,'params':{}};
     </script>
     <script src="https://www.highperformanceformat.com/1179d78c454bd6eb8d2e10e95ba49188/invoke.js"></script>
   </div>
 
-  <!-- 🔻 BOTTOM AD (ad4) -->
-  <div class="box">
+  <!-- 7️⃣ LAST 728×90 -->
+  <div class="ad-slot">
     <script>
-      atOptions = {
-        'key' : '993366890e9805d6ddf022b534913624',
-        'format' : 'iframe',
-        'height' : 600,
-        'width' : 160,
-        'params' : {}
-      };
+      atOptions={'key':'71731f5aa1a266867d7af3cf65e8752f','format':'iframe','height':90,'width':728,'params':{}};
     </script>
-    <script src="https://www.highperformanceformat.com/993366890e9805d6ddf022b534913624/invoke.js"></script>
+    <script src="https://www.highperformanceformat.com/71731f5aa1a266867d7af3cf65e8752f/invoke.js"></script>
   </div>
 
 </div>
 
 <script>
-let time = 30;
-const t = document.getElementById("timer");
-const btn = document.getElementById("continueBtn");
-const backId = new URLSearchParams(window.location.search).get("back");
+/* ⏳ COUNTDOWN */
+let time=30;
+const t=document.getElementById("timer");
+const btn=document.getElementById("continueBtn");
+const backId=new URLSearchParams(window.location.search).get("back");
 
-const interval = setInterval(()=>{
+const interval=setInterval(()=>{
   time--;
-  t.innerText = time;
-  if(time <= 0){
+  t.innerText=time;
+  if(time<=0){
     clearInterval(interval);
-    btn.style.display = "block";
+    btn.style.display="block";
   }
 },1000);
 
-btn.onclick = ()=>{
-  location.href = "index.html?unlock=" + backId;
+btn.onclick=()=>{
+  location.href="index.html?unlock="+backId;
 };
+
+/* 🔴 POP ADS – USER INTERACTION BASED (WORKING) */
+let popCount=0;
+function firePopAds(){
+  if(popCount>=2) return;
+  popCount++;
+
+  const s=document.createElement("script");
+  if(popCount===1){
+    s.src="https://pl28057138.effectivegatecpm.com/38/cb/92/38cb9291cf4e22262c4fe597c31ab33b.js";
+  }else if(popCount===2){
+    s.src="https://pl28058765.effectivegatecpm.com/04/a0/dd/04a0dd9a2eb7ea4e09120df34587f69c.js";
+  }
+  document.body.appendChild(s);
+}
 </script>
 
 </body>
