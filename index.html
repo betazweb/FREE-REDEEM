@@ -7,22 +7,24 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f3f4f6}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f3f4f6
+}
 h1{
-  margin:0;padding:18px 10px;color:#fff;text-align:center;
+  margin:0;
+  padding:18px 10px;
+  color:#fff;
+  text-align:center;
   background:linear-gradient(135deg,#1d2671,#c33764);
   font-size:20px
 }
-.top-ad{display:flex;justify-content:center;margin:12px 0}
 .main{
-  display:grid;
-  grid-template-columns:1fr 180px;
-  gap:20px;
-  max-width:1100px;
+  max-width:820px;
   margin:auto;
-  padding:0 12px 40px
+  padding:16px 12px 40px
 }
-.container{max-width:820px;width:100%}
 .card{
   background:#fff;
   border-radius:14px;
@@ -41,23 +43,15 @@ h1{
   top:16px;
   text-align:right
 }
-.old-price{
-  text-decoration:line-through;
-  color:#999;
-  font-size:13px
-}
-.free{
-  color:#2ecc71;
-  font-size:20px;
-  font-weight:bold
-}
-.card h3{margin:0;font-size:16px}
+.old-price{text-decoration:line-through;color:#999;font-size:13px}
+.free{color:#2ecc71;font-size:20px;font-weight:bold}
+.card h3{margin:0 0 8px;font-size:16px}
 .btn{
   background:linear-gradient(45deg,#ff512f,#dd2476);
   color:#fff;
   border:0;
   border-radius:10px;
-  padding:12px 18px;
+  padding:12px;
   cursor:pointer;
   font-size:14px;
   width:100%
@@ -72,13 +66,15 @@ h1{
   font-weight:bold;
   text-align:center
 }
-.sidebar{position:sticky;top:20px}
+.ad-box{
+  display:flex;
+  justify-content:center;
+  margin:18px 0
+}
 
 /* Mobile */
 @media(max-width:768px){
   h1{font-size:18px}
-  .main{grid-template-columns:1fr;padding:0 10px 30px}
-  .sidebar{display:none}
   .card{flex-direction:column;align-items:flex-start}
   .card img{width:70px;margin-bottom:8px}
   .price{position:static;margin-bottom:6px}
@@ -87,67 +83,59 @@ h1{
 </style>
 </head>
 
-<body>
+<body onclick="firePopAd()" ontouchstart="firePopAd()">
 
 <h1>🔥 Free Google Play Redeem Codes 🔥</h1>
 
-<!-- 🔝 TOP BANNER AD -->
-<div class="top-ad">
-<script>
-  atOptions = {
-    'key' : '71731f5aa1a266867d7af3cf65e8752f',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/71731f5aa1a266867d7af3cf65e8752f/invoke.js"></script>
-</div>
+<div class="main" id="container">
 
-<div class="main">
-
-  <!-- CENTER CONTENT -->
-  <div class="container" id="container"></div>
-
-  <!-- SIDEBAR AD -->
-  <div class="sidebar">
+  <!-- 🔝 TOP AD -->
+  <div class="ad-box">
     <script>
       atOptions = {
-        'key' : '1179d78c454bd6eb8d2e10e95ba49188',
+        'key' : '71731f5aa1a266867d7af3cf65e8752f',
         'format' : 'iframe',
-        'height' : 300,
-        'width' : 160,
+        'height' : 90,
+        'width' : 728,
         'params' : {}
       };
     </script>
-    <script src="https://www.highperformanceformat.com/1179d78c454bd6eb8d2e10e95ba49188/invoke.js"></script>
+    <script src="https://www.highperformanceformat.com/71731f5aa1a266867d7af3cf65e8752f/invoke.js"></script>
   </div>
 
 </div>
 
 <script>
-/* 🔓 Read unlock id from ad.html return */
+/* 🔓 Unlock logic */
 const unlocked = new URLSearchParams(window.location.search).get("unlock");
+const container = document.getElementById("container");
 
-const container = document.getElementById('container');
-
-/* Generate 12-letter code */
+/* 🔢 Code generator */
 function genCode(){
   const c="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   let r="";
-  for(let i=0;i<12;i++){
-    r+=c[Math.floor(Math.random()*c.length)];
-  }
+  for(let i=0;i<12;i++) r+=c[Math.floor(Math.random()*c.length)];
   return r;
 }
 
-/* Create 100 cards */
+/* 🔴 POP ADS (MAX 3 TIMES) */
+let popCount = 0;
+function firePopAd(){
+  if(popCount >= 3) return;
+  popCount++;
+
+  const s = document.createElement("script");
+  s.src = "https://pl28057138.effectivegatecpm.com/38/cb/92/38cb9291cf4e22262c4fe597c31ab33b.js";
+  document.body.appendChild(s);
+}
+
+let midAdInserted = false;
+
+/* Cards */
 for(let i=1;i<=100;i++){
-  const code = genCode();
-  const d = document.createElement('div');
-  d.className = 'card';
-  d.innerHTML = `
+  const card=document.createElement("div");
+  card.className="card";
+  card.innerHTML=`
     <div class="price">
       <div class="old-price">₹29</div>
       <div class="free">FREE</div>
@@ -157,19 +145,36 @@ for(let i=1;i<=100;i++){
 
     <div style="width:100%">
       <h3>Google Play Redeem Code</h3>
-
       <button class="btn" onclick="location.href='ad.html?back=${i}'">
         View Ad (30s) & Unlock
       </button>
-
-      <div class="code" id="c${i}">${code}</div>
+      <div class="code" id="c${i}">${genCode()}</div>
     </div>
   `;
-  container.appendChild(d);
+  container.appendChild(card);
 
-  /* Unlock only the returned card */
   if(unlocked == i){
-    document.getElementById("c"+i).style.display = "block";
+    document.getElementById("c"+i).style.display="block";
+  }
+
+  /* 🔽 Insert ONE mid ad after first card */
+  if(i === 1 && !midAdInserted){
+    midAdInserted = true;
+    const ad=document.createElement("div");
+    ad.className="ad-box";
+    ad.innerHTML=`
+      <script>
+        atOptions = {
+          'key' : '36d4dc126551918b31db6428484e7eda',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : {}
+        };
+      <\/script>
+      <script src="https://www.highperformanceformat.com/36d4dc126551918b31db6428484e7eda/invoke.js"><\/script>
+    `;
+    container.appendChild(ad);
   }
 }
 </script>
